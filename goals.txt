@@ -1,0 +1,15 @@
+1. Title Screen
+2. Games
+    * Players/Teams can take in a Game object which contains the scores for
+        Players/Teams and those stats from game are what is used to update
+        metrics. 
+3. Tournaments
+    * ^^ same general idea as Games, but is a container for lists of games
+4. Game Scrapper
+    * Grab the results of games from <somewhere> and process based on Teams,
+        same for the tournaments.
+    * Stats which are compiled for multiple games are stored and updated at the
+        same time that games are processed.
+5. Statistics database
+    * Need some way to keep track of my person stats for all the metrics.
+6. Matplotlib+seaborn for graphical representation.
