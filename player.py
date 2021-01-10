@@ -16,12 +16,13 @@ class Player:
     def __init__(self, player_name: str = "", player_tag: str = "",
                  player_points_total: int = 0, player_role: \
                      LaneAssignment = LaneAssignment.MID_LANE,
-                     former_teams: list = []):
+                     former_teams: list = [], player_rating: float = 0.0):
         self.player_name = player_name
         self.player_tag = player_tag
         self.player_points_total = player_points_total
         self.player_role = player_role
         self.former_teams = former_teams
+        self.player_rating = player_rating
 
     '''***************************PLAYER NAME********************************'''
     def set_player_name(self, player_name: str = "") -> ReturnStatus:
@@ -73,6 +74,17 @@ class Player:
     def add_team_to_former_teams(self, former_team: Team = None) \
         -> ReturnStatus:
         self.former_teams.append(former_team)
+        return self.ReturnStatus.PLAYER_SUCCESS
+
+    '''**************************PLAYER RATING*******************************'''
+    def set_player_rating(self, rating: float = 0.0) -> ReturnStatus:
+        self.player_rating = rating
+        return self.ReturnStatus.PLAYER_SUCCESS
+
+    def get_player_rating(self) -> (ReturnStatus, float):
+        return (self.ReturnStatus.PLAYER_SUCCESS, self.player_rating)
+
+    def update_player_rating(self, player_stats: dict = {}) -> ReturnStatus:
         return self.ReturnStatus.PLAYER_SUCCESS
 
     '''*****************************UTILITIES********************************'''
