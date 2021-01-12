@@ -14,9 +14,9 @@ class Player:
         PLAYER_SUCCESS = 1
 
     def __init__(self, player_name: str = "", player_tag: str = "",
-                 player_points_total: int = 0, player_role: \
-                     LaneAssignment = LaneAssignment.MID_LANE,
-                     former_teams: list = [], player_rating: float = 0.0):
+                 player_points_total: int = 0,
+                 player_role: LaneAssignment = LaneAssignment.MID_LANE,
+                 former_teams: list = [], player_rating: float = 0.0):
         self.player_name = player_name
         self.player_tag = player_tag
         self.player_points_total = player_points_total
