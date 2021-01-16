@@ -16,8 +16,7 @@ class Team:
         TEAM_ROSTER_GROUP_EMPTY = 4
 
     def __init__(self, team_name: str = "", team_tricode: str = "",
-                 team_points_total: int = 0,
-                 team_points_watermark: int = 0,
+                 team_points_total: int = 0, team_points_watermark: int = 0,
                  team_core: list = [], team_roster: list = [],
                  team_roster_active: list = [], team_roster_former: list = []):
         self.team_name = team_name
@@ -55,7 +54,7 @@ class Team:
 
     '''************************TEAM POINTS WATERMARK*************************'''
     def set_team_points_watermark(self, team_points_watermark: int = 0) \
-        -> ReturnStatus:
+                                                                -> ReturnStatus:
         self.team_points_watermark = team_points_watermark
         return self.ReturnStatus.TEAM_SUCCESS
     
@@ -126,7 +125,7 @@ class Team:
 
     '''*********************TEAM ROSTER ACTIVE*******************************'''
     def set_team_roster_active(self, team_roster_active: list = []) \
-        -> ReturnStatus:
+                                                                -> ReturnStatus:
         self.team_roster_active = team_roster_active
         return self.ReturnStatus.TEAM_SUCCESS
 
@@ -153,7 +152,7 @@ class Team:
 
     '''*************************TEAM ROSTER FORMER***************************'''
     def set_team_roster_former(self, team_roster_former: list = []) \
-        -> ReturnStatus:
+                                                                -> ReturnStatus:
         self.team_roster_former = team_roster_former
         return self.ReturnStatus.TEAM_SUCCESS
 

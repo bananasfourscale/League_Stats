@@ -42,7 +42,7 @@ class Player:
 
     '''***************************PLAYER POINT TOTAL*************************'''
     def set_player_points_total(self, player_points_total: int = 0) \
-        -> ReturnStatus:
+                                                                -> ReturnStatus:
         self.player_points_total = player_points_total
         return self.ReturnStatus.PLAYER_SUCCESS
 
@@ -55,8 +55,8 @@ class Player:
 
     '''***************************PLAYER TAG*********************************'''
     def set_player_role(self, player_role: \
-                        LaneAssignment = LaneAssignment.MID_LANE) -> \
-                            ReturnStatus:
+                            LaneAssignment = LaneAssignment.MID_LANE) \
+                                                                -> ReturnStatus:
         self.player_role = player_role
         return self.ReturnStatus.PLAYER_SUCCESS
 
@@ -72,7 +72,7 @@ class Player:
         return (self.ReturnStatus.PLAYER_SUCCESS, self.former_teams)
 
     def add_team_to_former_teams(self, former_team: Team = None) \
-        -> ReturnStatus:
+                                                                -> ReturnStatus:
         self.former_teams.append(former_team)
         return self.ReturnStatus.PLAYER_SUCCESS
 
