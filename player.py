@@ -5,23 +5,27 @@
 '''
 
 from enum import Enum
-from lane_assignments import LaneAssignment
-from team import Team
 
 class Player:
 
     class ReturnStatus(Enum):
         PLAYER_SUCCESS = 1
 
+    class LaneAssignment(Enum):
+        TOP_LANE = 1,
+        JUNGLE = 2,
+        MID_LANE = 3,
+        BOT_LANE = 4,
+        SUPPORT = 5
+
     def __init__(self, player_name: str = "", player_tag: str = "",
                  player_points_total: int = 0,
                  player_role: LaneAssignment = LaneAssignment.MID_LANE,
-                 former_teams: list = [], player_rating: float = 0.0):
+                 player_rating: float = 0.0):
         self.player_name = player_name
         self.player_tag = player_tag
         self.player_points_total = player_points_total
         self.player_role = player_role
-        self.former_teams = former_teams
         self.player_rating = player_rating
 
     '''***************************PLAYER NAME********************************'''
@@ -62,19 +66,6 @@ class Player:
 
     def get_player_role(self) -> (ReturnStatus, LaneAssignment):
         return (self.ReturnStatus.PLAYER_SUCCESS, self.player_role)
-
-    '''***************************FORMER TEAMS*******************************'''
-    def set_former_teams(self, former_teams: list = []) -> ReturnStatus:
-        self.former_teams = former_teams
-        return self.ReturnStatus.PLAYER_SUCCESS
-
-    def get_former_teams(self) -> (ReturnStatus, list):
-        return (self.ReturnStatus.PLAYER_SUCCESS, self.former_teams)
-
-    def add_team_to_former_teams(self, former_team: Team = None) \
-                                                                -> ReturnStatus:
-        self.former_teams.append(former_team)
-        return self.ReturnStatus.PLAYER_SUCCESS
 
     '''**************************PLAYER RATING*******************************'''
     def set_player_rating(self, rating: float = 0.0) -> ReturnStatus:

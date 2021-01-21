@@ -5,7 +5,6 @@
 '''
 from player import Player
 from enum import Enum
-from game import Game
 
 class Team:
 
@@ -161,8 +160,6 @@ class Team:
         return (self.ReturnStatus.TEAM_SUCCESS, self.team_roster_former)
 
     '''*****************************UTILITIES********************************'''
-    def update_game_stats(self, game: Game = None) -> (ReturnStatus, float):
-        return (self.ReturnStatus.TEAM_SUCCESS, 0.0)
 
     def __display__(self):
         print("Team Name : ", self.team_name)
